@@ -10,15 +10,15 @@ use Throwable;
 
 final class ProtocolHandler
 {
-    public const MODERN_PROTOCOL_VERSION = '2026-07-28';
+    public const string MODERN_PROTOCOL_VERSION = '2026-07-28';
 
-    public const LEGACY_PROTOCOL_VERSIONS = [
+    public const array LEGACY_PROTOCOL_VERSIONS = [
         '2025-11-25',
         '2025-06-18',
         '2025-03-26',
     ];
 
-    private const JSON_FLAGS = JSON_UNESCAPED_SLASHES
+    private const int JSON_FLAGS = JSON_UNESCAPED_SLASHES
         | JSON_UNESCAPED_UNICODE
         | JSON_PRESERVE_ZERO_FRACTION
         | JSON_THROW_ON_ERROR;
@@ -122,7 +122,7 @@ final class ProtocolHandler
             return false;
         }
 
-        if (! is_string($version) || $version !== self::MODERN_PROTOCOL_VERSION) {
+        if ($version !== self::MODERN_PROTOCOL_VERSION) {
             throw new McpProtocolException(
                 -32022,
                 'Unsupported protocol version',

@@ -14,7 +14,7 @@ use Psr\Http\Message\ServerRequestInterface;
 
 final class McpController
 {
-    private const JSON_FLAGS = JSON_UNESCAPED_SLASHES
+    private const int JSON_FLAGS = JSON_UNESCAPED_SLASHES
         | JSON_UNESCAPED_UNICODE
         | JSON_PRESERVE_ZERO_FRACTION
         | JSON_THROW_ON_ERROR;

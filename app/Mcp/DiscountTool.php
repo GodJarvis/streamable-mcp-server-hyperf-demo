@@ -8,7 +8,7 @@ use DomainException;
 
 final class DiscountTool
 {
-    public const NAME = 'calculate_discount';
+    public const string NAME = 'calculate_discount';
 
     public function definition(): array
     {
